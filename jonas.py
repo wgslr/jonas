@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     mounts = find_mounts(passthrough)
     if mounts:
-        cmd = ['--workdir', os.getcwd()]
+        cmd += ['--workdir', os.getcwd()]
         for path in mounts:
             cmd += ['-v', path + ':' + path]
 
@@ -64,6 +64,9 @@ if __name__ == '__main__':
 
     if args.entrypoint not in [common.DEFAULT_VAL, None]:
         cmd += ['--entrypoint', args.entrypoint]
+
+    cmd += [args.image]
+    cmd += passthrough
 
     print(cmd, file=sys.stderr)
 
