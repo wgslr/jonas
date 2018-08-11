@@ -11,7 +11,7 @@ JONAS_BIN = 'jonas'
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('name')
+# parser.add_argument('name')
 
 parser.add_argument('-i', '--image', dest='image',
                     type=str, required=True)
