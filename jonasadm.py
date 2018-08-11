@@ -1,5 +1,4 @@
 #!/bin/env python3
-
 """
 Generates wrapper for given command.
 """
@@ -11,12 +10,10 @@ JONAS_BIN = 'jonas'
 
 parser = argparse.ArgumentParser()
 
-# parser.add_argument('name')
-
 parser.add_argument('-i', '--image', dest='image',
                     type=str, required=True)
 
-parser.add_argument('--entrypoint', dest='entrypoint', default=common.DEFAULT_VAL,
+parser.add_argument('-c', '--entrypoint', dest='entrypoint', default=common.DEFAULT_VAL,
                     type=str, help="Image's entrypoint override")
 
 args = parser.parse_args()
